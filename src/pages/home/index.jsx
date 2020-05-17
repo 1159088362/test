@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import logo from '@/assets/11.png'
 import users from '@/assets/user.png'
 import Router from '@/router/content'
+import { getDate } from '@/actions/table'
 import './style.less';
 
 const { SubMenu } = Menu;
@@ -14,6 +15,8 @@ export default @connect ( state => {
   return {
     data:state.login.data
   }
+},{
+  getDate
 })
 class index extends React.Component {
   render() {
@@ -26,7 +29,7 @@ class index extends React.Component {
             <div className='sear'>
               <Search
                 placeholder="search"
-                onSearch={value => console.log(value)}
+                onSearch={value => this.props.getDate(value)}
                 style={{ width: 200 ,height:30 }}
               />
               <div className="user">

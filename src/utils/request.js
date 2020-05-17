@@ -55,7 +55,7 @@ export function post (url, data) {
 }
 
 // get
-export function get (url, data = '') {
+export function get (url, data='') {
   return new Promise((resolve, reject) => {
     axios({
       url,

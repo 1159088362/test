@@ -47,7 +47,7 @@ export default @connect ( state => {
 })
 class index extends Component {
 componentDidMount () {
-  this.props.getDate()
+  this.props.getDate('')
 }
   render() {
     const { data } = this.props

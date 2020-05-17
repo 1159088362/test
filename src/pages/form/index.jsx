@@ -26,11 +26,9 @@ class index extends React.Component {
       }
     });
 }
-  cancel = () => {
-    this.props.form.setFieldsValue({
-          name:'',msg:'',age:'',hospital:'',gender:''
-          });
-}
+handleReset = () => {
+  this.props.form.resetFields();
+};
   render() {
     const { getFieldDecorator } = this.props.form;
   const { formLayout } = this.state;
@@ -85,7 +83,7 @@ class index extends React.Component {
           </Form.Item>
           <Form.Item {...buttonItemLayout}>
             <Button type="primary" htmlType="submit"  className="login-form-button">Submit</Button>
-            <Button type="" onClick={()=>{this.cancel()}}>Cancel</Button>
+            <Button type="" onClick={this.handleReset}>Cancel</Button>
           </Form.Item>
         </Form>
       </div>
