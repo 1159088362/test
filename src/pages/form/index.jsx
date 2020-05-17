@@ -43,7 +43,7 @@ class index extends React.Component {
     });
 }
 handleReset = () => {
-  this.props.form.resetFields();
+  this.props.Edit({})
 };
   render() {
     const { getFieldDecorator } = this.props.form;

@@ -4,7 +4,7 @@ import { post } from '@/utils/request'
 import api from '@/services/api'
 import Samlpedate from '@@/SampleDate'
 import './style.less'
-class index extends React.Component {
+export default class index extends React.Component {
   state = {
     data: [],
     total: 0,
@@ -29,24 +29,22 @@ class index extends React.Component {
   }
   render() {
     let { data,total,current } = this.state;
-    console.log(data);
     return <div>  
      <div className="sam">
-     {
-       data.map( v => {
-         return (
-           <Samlpedate data={v} key={v.id} />
-         )
-       })
-     }
+      {
+        data.map( v => {
+          return (
+            <Samlpedate data={v} key={v.id} />
+          )
+        })
+      }
      </div>
      <Pagination 
-     current={current} 
-     pageSize={21} 
-     onChange={this.onChange} 
-     total={Number(total)} 
+      current={current} 
+      pageSize={21} 
+      onChange={this.onChange} 
+      total={Number(total)} 
      />
     </div>;
   }
 }
-export default index;
