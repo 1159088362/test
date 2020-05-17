@@ -6,3 +6,9 @@ export function getDate (options) {
     payload:get(`/aps${api.search}?keyword=`+options)
   }
 }
+export function delDate (payload) {
+  return {
+    type:"DELETE",
+    payload
+  }
+}

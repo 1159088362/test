@@ -7,7 +7,6 @@ const initialState = {
   
     case "SEARCH":
       return { ...state,data:payload.users}
-  
     default:
       return state
     }
