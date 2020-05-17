@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Menu, Breadcrumb, Icon, Input } from 'antd'
+import { Layout, Menu, Icon, Input } from 'antd'
 import { NavLink} from 'react-router-dom'
 import { connect } from 'react-redux'
 import logo from '@/assets/11.png'
@@ -125,9 +125,8 @@ class index extends React.Component {
           </SubMenu>
         </Menu>
       </Sider>
-      <Layout style={{ padding: '0 24px 24px' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-        </Breadcrumb>
+      <Layout style={{ padding: '24px' }}>
+       
         <Content
           style={{
             background: '#fff',

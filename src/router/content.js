@@ -9,7 +9,7 @@ export default class Router extends React.Component {
         <Route path="/form" component={Form} />
         <Route path="/sample" component={Sample} />
         <Route path="/table" component={Table} />
-        <Redirect to="/table" />
+        <Redirect to="/echart" />
       </Switch>
     )
   }
