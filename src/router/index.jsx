@@ -1,15 +1,23 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { App, Home,Login,Reg } from './assembly'
-export default class Router extends React.Component {
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Home,Login,Reg } from './assembly'
+export default @connect ( state => {
+  return {
+    data:state.login.data
+  }
+})
+class Router extends React.Component {
   render () {
+    const { data } = this.props
     return (
       <BrowserRouter>
         <Switch>
         <Route path="/login" component={Login} />
         <Route path="/reg" component={Reg} />
-        <Route path="/home" component={Home} />
-        <Route path="/" component={App} />
+        <Route path="/" render = { () => {
+          return data.user_id ? <Home /> : <Redirect to="/login" />
+        }} />
       </Switch>
       </BrowserRouter>
     )
