@@ -1,8 +1,25 @@
-import React from 'react';
-import { Form, Input, Button ,message} from 'antd';
+import React from 'react'
+import { Form, Input, Button ,message} from 'antd'
+import { connect } from 'react-redux'
 import { post } from '@/utils/request'
+import { Edit } from '@/actions/form'
 import './style.less'
-
+export default @connect ( state => {
+  return {
+    data:state.form.data
+  }
+},{
+  Edit
+})
+@Form.create({
+  mapPropsToFields(props) {
+    const { data } =props
+    return Object.entries(data).reduce((v0,[key,value]) => {
+      v0[key]=Form.createFormField({value})
+      return v0
+    },{})
+  },
+})
 class index extends React.Component {
   state = {
       formLayout: 'vertical',
@@ -11,13 +28,12 @@ class index extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
         if(values.age>=0&&values.age<=100){
           post('https://api.baxiaobu.com/index.php/home/v5/add', values).then(res => {
-          console.log(res)
           if(parseInt(res.status)===200){
             message.info('添加成功')
             this.props.history.push('/table')
+            this.props.Edit({})
           }
         })
         }else{
@@ -90,6 +106,3 @@ handleReset = () => {
     </div>;
   }
 }
-
-const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(index);
-export default WrappedNormalLoginForm;
