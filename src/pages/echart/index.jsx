@@ -11,13 +11,13 @@ class index extends React.Component {
     },
     xAxis: {
         type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        data: ['2013', '2014', '2015', '2016', '2017', '2018']
     },
     yAxis: {
         type: 'value'
     },
     series: [{
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        data: [10, 19, 3, 5, 2, 3],
         type: 'line',
         smooth: true
     }]
@@ -44,7 +44,7 @@ class index extends React.Component {
 				     xAxis: [
 				         {
 				             type: 'category',
-				             data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+										 data: ['2013', '2014', '2015', '2016', '2017', '2018'],
 				             axisTick: {
 				                 alignWithLabel: true
 				             }
@@ -60,7 +60,7 @@ class index extends React.Component {
 				             name: '直接访问',
 				             type: 'bar',
 				             barWidth: '60%',
-				             data: [10, 52, 200, 334, 390, 330, 220]
+				             data: [10, 19, 3, 5, 2, 3]
 				         }
 				     ]
 				 };
@@ -72,13 +72,13 @@ class index extends React.Component {
           },
 						xAxis: {
 							type: 'category',
-							data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+							data: ['2013', '2014', '2015', '2016', '2017', '2018']
 						},
 						yAxis: {
 							type: 'value'
 						},
 						series: [{
-							data: [820, 932, 901, 934, 1290, 1330, 1320],
+							data: [10, 19, 3, 5, 2, 3],
 							type: 'line',
 							smooth: true
 						}]
