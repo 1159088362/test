@@ -1,6 +1,7 @@
 import React from 'react';
 import {  message } from 'antd';
 import { post } from '@/utils/request'
+import api from '@/services/api'
 import './style.less';
 class index extends React.Component {
   reg = () => {
@@ -11,7 +12,7 @@ class index extends React.Component {
     }else if (this.refs.surepwd.value !== this.refs.pwd.value) {
       alert('密码不一致')
     } else {
-      post('http://api.baxiaobu.com/index.php/home/v1/register',
+      post(`/aps${api.reg}`,
       {username:this.refs.user.value,pwd:this.refs.pwd.value}).then((res)=>{
       if (parseInt(res.status) === 200) {
           message.info('注册成功');

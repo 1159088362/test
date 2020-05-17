@@ -3,6 +3,7 @@ import { Form, Input, Button ,message} from 'antd'
 import { connect } from 'react-redux'
 import { post } from '@/utils/request'
 import { Edit } from '@/actions/form'
+import api from '@/services/api'
 import './style.less'
 export default @connect ( state => {
   return {
@@ -29,7 +30,7 @@ class index extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         if(values.age>=0&&values.age<=100){
-          post('https://api.baxiaobu.com/index.php/home/v5/add', values).then(res => {
+          post(`/apa${api.add}`, values).then(res => {
           if(parseInt(res.status)===200){
             message.info('添加成功')
             this.props.history.push('/table')

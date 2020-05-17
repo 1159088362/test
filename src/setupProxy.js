@@ -12,7 +12,7 @@ module.exports = function (app) {
   )
   app.use(
     createProxyMiddleware('/aps', {
-      target: 'https://api.baxiaobu.com',
+      target: 'http://api.baxiaobu.com',
       changeOrigin: true,
       pathRewrite: {
         '^/aps': ''
